@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.main.MainController">
+   <top>
+      <Label fx:id="headerLabel" text="Welcome" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="82.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="119.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="254.0" minHeight="4.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="266.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Betreff" />
+                  <Label text="ToDo" GridPane.rowIndex="1" />
+                  <TextArea fx:id="taContent" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <Button mnemonicParsing="false" onAction="#save" text="Speichern" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="tfSubject" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <TableView fx:id="tvToDo" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="Betreff" />
+                <TableColumn fx:id="contentColumn" prefWidth="75.0" text="ToDo" />
+              </columns>
+            </TableView>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
